@@ -3,7 +3,7 @@ import inquirer from 'inquirer';
 import fs from 'fs/promises'
 
 
-let {title, overview} = await inquirer
+let {title, overview, repoLink} = await inquirer
     .prompt([
         {
             type: 'input',
@@ -15,16 +15,25 @@ let {title, overview} = await inquirer
             name: 'overview',
             message: "Give brief overview of the project. Describe the overall premise and the main individual elements required to achieve project goals.",
         },
+        {
+            type: 'input',
+            name: 'repoLink',
+            message: "Please insert your repo link (requires full URL including https://)",
+        },
     ])
 
 // console.log(first_name, last_name);
 
 let readmeData = `
 
-# ${title}
+# <span style="color: red; text-decoration: underline">${title}</span>
+
 ## Overview
 ${overview}
 
+## Project Links
+Repo Link: ${repoLink}
+
 `
 
-await fs.writeFile('README.md', readmeData);
+await fs.writeFile('./output/README.md', readmeData);
