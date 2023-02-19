@@ -39,12 +39,12 @@ let readmeData = `
 
 ## Overview
 ${description}
-![${license}](./src/${license}.svg)
+<img src="https://img.shields.io/badge/License-${license}-blue.svg">
 
 ## Table of Contents
       * Installation 
       * Usage 
-      * License 
+      * [Header Name](#header-name)
       * Contributing 
       * Tests 
       * Questions
