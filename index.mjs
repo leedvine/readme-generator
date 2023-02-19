@@ -27,7 +27,7 @@ let {title, description, repoLink, license} = await inquirer
             choices: ['GNU AGPLv3', 'GNU GPLv3',
               'GNU LGPLv3', 'Mozilla Public License 2.0',
               'Apache License 2.0', 'MIT License', 'Boost Software License 1.0',
-              'The Unlicense'],
+              'The Unlicense', 'Marc is the dogs'],
           },
         
     ])
@@ -36,18 +36,19 @@ let {title, description, repoLink, license} = await inquirer
 let readmeData = `
 
 # <span style="color: red; text-decoration: underline">${title}</span>
-
 ## Overview
 ${description}
+
 <img src="https://img.shields.io/badge/License-${license}-blue.svg">
 
 ## Table of Contents
-      * Installation 
-      * Usage 
-      * [Header Name](#header-name)
-      * Contributing 
-      * Tests 
-      * Questions
+[Installation](#Installation)<br>
+[Usage](#Usage)<br>
+[License](#License)<br>
+[Contributing](#Contributing)<br>
+[Tests](#Tests)<br>
+[Questions](#Questions)<br>
+
 
 ## Project Links
 Repo Link: ${repoLink}
