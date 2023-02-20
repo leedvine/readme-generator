@@ -49,8 +49,8 @@ Please feel free to reach out to me here leedvine@gmail.com
 <br><br>
 
 ## Installation
-Download files from here https://github.com/leedvine/readme-generator
-Instal node.js
+Clone repo here https://github.com/leedvine/readme-generator
+Initialize node.js
 Run NPM for inquirer and File Service
 Activate package.json
 <br><br>
