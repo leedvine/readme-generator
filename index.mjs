@@ -1,8 +1,11 @@
+
+// Import inquirer and fs
 import inquirer from 'inquirer';
 
 import fs from 'fs/promises'
 
-
+// Create a await inquirer function with a list of prompts
+// with questions to determine README.MD make up
 let {title, description, installation, usage, contributing, repoLink, questions, license, tests} = await inquirer
     .prompt([
         {
@@ -32,7 +35,7 @@ let {title, description, installation, usage, contributing, repoLink, questions,
             choices: ['GNU AGPLv3', 'GNU GPLv3',
               'GNU LGPLv3', 'Mozilla Public License 2.0',
               'Apache License 2.0', 'MIT License', 'Boost Software License 1.0',
-              'The Unlicense', 'Marc is the dogs'],
+              'The Unlicense'],
           },
         {
             type: 'input',
@@ -57,22 +60,25 @@ let {title, description, installation, usage, contributing, repoLink, questions,
         
     ])
 
+// Create a variable with backticks to use the info gained from above questions
+// to build up the README.MD using markdown.
 
 let readmeData = `
 
-# <span style="color: red; text-decoration: underline">${title}</span>
+# ${title}
+
 ## Description
 ${description}
 
 <img src="https://img.shields.io/badge/License-${license}-blue.svg">
 
 ## Table of Contents
-[Installation](#installation)<br>
-[Usage](#usage)<br>
-[License](#license)<br>
-[Contributing](#contributing)<br>
-[Tests](#tests)<br>
-[Questions](#questions)<br>
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributing](#contributing)
+* [Tests](#tests)
+* [Questions](#questions)
 
 ## Installation
 
@@ -97,8 +103,8 @@ ${tests}
 This repo can be found here ${repoLink}<br>
 If you have any questions please email ${questions}
 
-
-
 `
+
+// using file system we generate a README.MD file from the readmeData variable
 
 await fs.writeFile('./output/README.md', readmeData);
